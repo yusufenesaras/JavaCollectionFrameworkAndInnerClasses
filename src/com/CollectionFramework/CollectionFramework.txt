@@ -1,0 +1,64 @@
+Java collection framework’ün faydaları:
+
+Development için harcanan eforu azaltır: collection framework sayesinde
+ pek çok datasal işlemi sağlayabilecek yapı bulunur. Bu sayede biz kendi
+ geliştireceğimiz business logic’e odaklanmış oluruz.
+Kalite artar: collection class’larını kullanrak daha sıkı test edilmiş 
+kodlar yazmış oluruz. Çünkü bu classlar önceden test edildiğinden bize 
+sadece kendi logic’imizi test etmek kalır.
+Tekrar kullanılabilirlik ve birliktelik sağlanır.
+Efor azallır: Yeni bir API kullanırsa yeni bir API öğrenilir.
+
+Java Collection Interfaceleri:
+
+Java Collection Interfacelerini Java Collection framework’ün temelini oluşturur. 
+Dikkat edilirse tüm core collectionlar generik yapıdadır.
+örneğin public interface Collection<E> gibi.
+Buradaki <E>syntax olarak generiklik için kullanılır. 
+Biz bir collection tanımladığımızda kullanılacak objeyi belirtiriz.
+ Bu sayede runtime’da hata almak yerine compile time’da hata almış oluruz. 
+Collection framework’ün içindeki veri tiplerinin sayısını sabit tutmak için 
+java platformu her değişken türü için ayrı bir collection tipi sağlamaz.
+ Eğer desteklenmeyen bir işlem yapılırsa UnsupportedOperationException fırlatılır. 
+
+Collection Interface:
+
+Bu interface collection framework hiyerarşisinin en tepesinde bulunan interfacetir.
+ Collection bir grup objeyi temsil eder. İçinde çeşitli elemanlar bulunur. 
+Java platformu direkt olarak bu interface’i implement etmeyi sağlamaz. 
+Ancak alt class’ları sağlar. Set ve List gibi. Bu interface içinde çeşitli methodlar bulunur. 
+Kaç elemana sahip olup olmadığını kontrol eden ekleme çıkarma yapan vb. gibi.
+İnterface ayrıca yığın işlemleri içinde methodlar bulundurur. 
+Bunlar containsAll, addAll, removeAll, retainAll, clear…
+toArray methodu sayesinde eski apilerde input olarak array alan methodların kullanımı sağlanabilir.
+ Böylece collection ve methodlar arasında bir köprü oluşturulur.
+
+Iterator Interface:
+
+Iterator interface’i herhangi bir collectionda iterate işlemlerini sağlayan methodlar içerir. 
+Iterator java collection framework’ünde enumaration’ların yerini alır. 
+Iteratorler iterasyon boyunca collectionlardan elemanların kaldırılmasına izin verir. 
+İteratorler iterator paterninin uygulanmasıyla oluşturulmuştur.
+
+Iterator patern:
+
+İterator pattern collection’da sadece çapraz işlemler yapmak için değil aynı zamanda
+ ihtiyaçlara göre farklı amaçlar içinde kullanılabilir. İterator patterni collectionda
+ yapılan karmaşık işlemleri gizler. Client program sadece iterator methodlarını görmüş olur.
+
+Set interface:
+
+Set içinde tekrar eden eleman bulunmayan bir collectiondur. 
+Bu interface matematiksel set’i temsil eder. 
+Java platformunda 3 tane genel implementasyon bulunur. 
+Bunlar HashSet, TreeSet, ve LinkedHashSet’dir.
+Set interface random Access’e izin vermez. 
+Bu nedenle iterator veya foreach döngüsü kullanılır.
+
+List interface:
+
+List sıralı bir collectiondur ve tekrar eden elemanlar barındırabilir.
+ İndex ile elemanlara erişilebilir. List dinamik bir dizidir. 
+List’in en çok kullanılan tipi ArrayList ve LinkedList’tir.
+List interface ‘i belirtilen bir indekse eleman ekleyebilen (add),
+ kaldırabilen (remove) ve yer değiştirmeyi sağlayan (replace) methodlar içerir.
