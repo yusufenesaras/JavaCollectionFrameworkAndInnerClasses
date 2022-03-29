@@ -133,13 +133,14 @@ public class Main {
         ts.add(601);
         ts.add(701);
         ts.add(801);
+        ts.add(901);
 
         System.out.println("TreeSet koleksiyon ogeleri : " + ts);
         System.out.println("koleksiyonun ilk ögesi : " + ts.first());
         System.out.println("koleksiyonın son ögesi : " + ts.last());
-        System.out.println("7 den küçük elemanlar : "  + ts.headSet(7));
-        System.out.println("6 ile 13 arasındaki elemanlar : " + ts.subSet(6, 13));
-        System.out.println("7 ve 7 den büyük elemanlar : "  + ts.tailSet(7));
+        System.out.println("701 den küçük elemanlar : "  + ts.headSet(701));
+        System.out.println("601 ile 901 arasındaki elemanlar : " + ts.subSet(601, 901));
+        System.out.println("701 ve 701 den büyük elemanlar : "  + ts.tailSet(701));
 
         System.out.println();
         System.out.println("--------------------------------------------");
@@ -230,11 +231,11 @@ public class Main {
 
         next() : ileri doğru
         previous(): geri doğru
-        hasNext(): ileride eleman varmı?
-        hasPrevious(): geride elaman varmı? true yada false
+        hasNext(): ileride eleman var mı?
+        hasPrevious(): geride elaman var mı? true yada false
          */
 
-        ArrayList alist = new ArrayList(); //generic type yok.
+        ArrayList alist = new ArrayList(); //non generic.
 
         alist.add(1);
         alist.add(2);
